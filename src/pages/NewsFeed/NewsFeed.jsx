@@ -24,7 +24,7 @@ export default function NewsFeed() {
   }, []);
 
   return (
-    <>
+    <div className="news-feed">
       <h1>News Feed</h1>
       
       <h2>Regular Posts</h2>
@@ -36,6 +36,6 @@ export default function NewsFeed() {
       {eventPosts.map(eventPost => (
         <EventPost key={eventPost._id} eventPost={eventPost} />
       ))}
-    </>
+    </div>
   );
 }

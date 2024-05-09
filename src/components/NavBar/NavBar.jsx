@@ -15,7 +15,7 @@ export default function NavBar({ user, setUser }) {
       &nbsp; | &nbsp;
       <Link to="/add-post">Add Post</Link>
       &nbsp; | &nbsp;
-      <Link to="/add-gig">Add Gig</Link>
+      <Link to="/add-gig">Add Gig/Event</Link>
       &nbsp; | &nbsp;
       <input type="text" placeholder="Search..." />
       &nbsp; | &nbsp;
