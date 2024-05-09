@@ -4,7 +4,6 @@ import { getUser } from '../../utilities/users-service';
 import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
 import NewsFeed from '../NewsFeed/NewsFeed';
-// import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
 import NavBar from '../../components/NavBar/NavBar';
 
 export default function App() {
@@ -18,7 +17,6 @@ export default function App() {
             <Routes>
               {/* Route components in here */}
               <Route path="/posts" element={<NewsFeed />} />
-              {/* <Route path="/orders" element={<OrderHistoryPage />} /> */}
             </Routes>
           </>
           :

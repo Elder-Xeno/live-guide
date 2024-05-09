@@ -12,7 +12,13 @@ export default function NavBar({ user, setUser }) {
       <Link to="/profile">Profile</Link>
       &nbsp; | &nbsp;
       <Link to="/posts">News Feed</Link>
-      &nbsp;&nbsp;
+      &nbsp; | &nbsp;
+      <Link to="/add-post">Add Post</Link>
+      &nbsp; | &nbsp;
+      <Link to="/add-gig">Add Gig</Link>
+      &nbsp; | &nbsp;
+      <input type="text" placeholder="Search..." />
+      &nbsp; | &nbsp;
       <span>Welcome, {user.name}</span>
       &nbsp;&nbsp;<Link to="" onClick={handleLogOut}>Log Out</Link>
     </nav>
