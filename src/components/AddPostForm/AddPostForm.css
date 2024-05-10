@@ -1,0 +1,36 @@
+.add-post-form {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 50px;
+  }
+  
+.add-post-form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+.add-post-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+.add-post-form button {
+    background-color: #c98d4d;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+.add-post-form button:hover {
+    background-color: #b35100;
+  }
+
+h1 {
+    padding-top: 30px;
+}

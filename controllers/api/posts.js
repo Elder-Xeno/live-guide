@@ -5,6 +5,7 @@ const Gig = require('../../models/gig');
 module.exports = {
     createPost,
     createGig,
+    getPosts,
   };
   
   async function createPost(req, res) {
@@ -24,3 +25,13 @@ module.exports = {
       res.status(400).json(err);
     }
   }
+
+  async function getPosts(req, res) {
+    try {
+        const posts = await Post.find();
+        res.json(posts);
+    } catch (error) {
+        console.error('Error fetching posts:', error);
+        res.status(500).json({ error: 'Server error' });
+    }
+}
