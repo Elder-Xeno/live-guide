@@ -28,7 +28,7 @@ export default function AddPostForm({ onAdd }) {
         try {
             const postData = { content, media, user };
             const newPost = await createPost(postData);
-            onAdd(newPost, user); // pass user along with new post
+            await onAdd(newPost, user); // pass user along with new post
             setContent('');
             setMedia([]);
         } catch (error) {

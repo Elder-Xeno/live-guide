@@ -23,6 +23,8 @@ export default function NewsFeed() {
      fetchData();
   }, []);
 
+
+
   return (
     <div className="news-feed">
       <h1>News Feed</h1>

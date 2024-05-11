@@ -11,11 +11,11 @@ export default function NavBar({ user, setUser }) {
     <nav>
       <Link to="/profile">Profile</Link>
       &nbsp; | &nbsp;
-      <Link to="/posts">News Feed</Link>
+      <Link to="/">News Feed</Link>
       &nbsp; | &nbsp;
       <Link to="/add-post">Add Post</Link>
       &nbsp; | &nbsp;
-      <Link to="/add-gig">Add Gig/Event</Link>
+      <Link to="/add-event">Add Gig/Event</Link>
       &nbsp; | &nbsp;
       <input type="text" placeholder="Search..." />
       &nbsp; | &nbsp;
