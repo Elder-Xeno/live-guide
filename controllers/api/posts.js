@@ -18,13 +18,28 @@ async function createPost(req, res) {
 }
 
 async function createEvent(req, res) {
+    console.log("Received request to create event:", req.body);
     try {
-        const event = await Gig.create(req.body);
-        res.status(201).json(event);
-    } catch (err) {
-        res.status(400).json(err);
+      const { title, description, venue, date, price, supportingActs, spotifyLink, ticketLink } = req.body;
+      const gig = new Gig({
+        title,
+        description,
+        venue,
+        date,
+        price,
+        supportingActs,
+        spotifyLink,
+        ticketLink,
+        user: req.user._id
+      });
+      const savedGig = await gig.save();
+      console.log("Event saved successfully:", savedGig);
+      res.status(201).json(savedGig);
+    } catch (error) {
+      console.error("Error saving event:", error);
+      res.status(400).json({ error: "Failed to save event" });
     }
-}
+  }
 
 async function getPosts(req, res) {
     try {

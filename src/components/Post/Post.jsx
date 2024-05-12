@@ -3,7 +3,7 @@ import './Post.css';
 export default function Post({ post }) {
     return (
       <div className="post">
-        <p>Posted by: {post.user.name}</p>
+        <p>Posted by: {post.user}</p>
         <p>{post.content}</p>
         {post.media && post.media.length > 0 && (
           <div>

@@ -6,13 +6,21 @@ const gigSchema = new mongoose.Schema({
     ref: 'User',
     required: true
   },
+  title: {
+    type: String,
+    required: true
+  },
+  description: {
+    type: String,
+    required: true
+  },
   venue: {
     type: String,
     required: true
   },
   location: {
     type: String,
-    required: true
+    // required: true    //Uncomment this when we have map API integrated
   },
   date: {
     type: Date,

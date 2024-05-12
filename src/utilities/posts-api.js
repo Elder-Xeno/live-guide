@@ -25,5 +25,6 @@ export async function createPost(postData, userName) {
 
 export async function createEvent(eventData, userName) {
     const newEvent = { ...eventData, userName };
+    console.log("New Event Data:", newEvent);
     return addEvent(newEvent);
 }

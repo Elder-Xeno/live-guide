@@ -1,21 +1,21 @@
 import { useState } from 'react';
 import { createEvent } from '../../utilities/posts-api';
 
-export default function AddEventForm({ onAdd, user }) {
+export default function AddEventForm({ onAdd }) {
     const [formData, setFormData] = useState({
         title: '',
         description: '',
         venue: '',
         date: '',
-        price: '',
-        supportingActs: [],
+        price: 0,
+        supportingActs: '',
         spotifyLink: '',
         ticketLink: '',
     });
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData((prevData) => ({
+        setFormData(prevData => ({
             ...prevData,
             [name]: value,
         }));
@@ -24,19 +24,9 @@ export default function AddEventForm({ onAdd, user }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const newEvent = await createEvent(formData, user.name);
+            const newEvent = await createEvent(formData);
             await onAdd(newEvent);
-            // clear fields after submission
-            setFormData({
-                title: '',
-                description: '',
-                venue: '',
-                date: '',
-                price: '',
-                supportingActs: [],
-                spotifyLink: '',
-                ticketLink: '',
-            });
+            setFormData({});
         } catch (error) {
             console.error('Error adding event:', error);
         }
@@ -50,7 +40,7 @@ export default function AddEventForm({ onAdd, user }) {
                 <input type="text" name="description" value={formData.description} onChange={handleChange} placeholder="Description" required />
                 <input type="text" name="venue" value={formData.venue} onChange={handleChange} placeholder="Venue" required />
                 <input type="date" name="date" value={formData.date} onChange={handleChange} placeholder="Date" required />
-                <input type="text" name="price" value={formData.price} onChange={handleChange} placeholder="Price" />
+                <input type="number" name="price" value={formData.price} onChange={handleChange} placeholder="Price" />
                 <input type="text" name="supportingActs" value={formData.supportingActs} onChange={handleChange} placeholder="Supporting Acts" />
                 <input type="text" name="spotifyLink" value={formData.spotifyLink} onChange={handleChange} placeholder="Spotify Link" />
                 <input type="text" name="ticketLink" value={formData.ticketLink} onChange={handleChange} placeholder="Ticket Link" />
