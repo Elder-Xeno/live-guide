@@ -3,7 +3,7 @@ import './EventPost.css';
 export default function EventPost({ eventPost }) {
     return (
         <div className="event-post">
-            <><h2>{eventPost.title}</h2>
+            <><h2 className='event.title'>{eventPost.title}</h2>
             <p>Description: {eventPost.description}</p>
             <p>Date: {eventPost.date}</p>
             <p>Venue: {eventPost.venue}</p>
