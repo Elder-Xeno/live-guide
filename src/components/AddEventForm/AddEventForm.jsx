@@ -21,6 +21,12 @@ export default function AddEventForm({ onAdd, user }) {
             [name]: value,
         }));
     };
+    const handleVenue = (place) => {
+        setFormData(prevData => ({
+            ...prevData,
+            venue: place,
+        }));
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -60,7 +66,7 @@ export default function AddEventForm({ onAdd, user }) {
                 <input type="text" name="ticketLink" value={formData.ticketLink} onChange={handleChange} placeholder="Ticket Link" />
                 <button type="submit">Add Event</button>
             </form>
-                <GoogleMaps venue={formData.venue} onChange={handleChange}/>
+                <GoogleMaps venue={formData.venue} handleVenue={handleVenue}/>
         </div>
     );
 }
