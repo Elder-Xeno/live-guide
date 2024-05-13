@@ -14,7 +14,7 @@ export default function GoogleMaps({handleVenue}) { useEffect(() => {
 
     script.addEventListener('load',function initMap() {
         const map = new google.maps.Map(document.getElementById("map"), {
-          center: { lat: 40.749933, lng: -73.98633 },
+          center: { lat: -37.840935, lng: 144.946457 },
           zoom: 13,
           mapTypeControl: false,
         });
