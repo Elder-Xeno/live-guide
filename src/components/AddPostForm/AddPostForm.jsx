@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
-import { getUser } from '../../utilities/users-service';
 import { createPost } from '../../utilities/posts-api';
+import { getUser } from '../../utilities/users-service';
 import './AddPostForm.css';
+
 
 export default function AddPostForm({ onAdd }) {
     const [content, setContent] = useState('');

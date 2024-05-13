@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { createEvent } from '../../utilities/posts-api';
+import GoogleMaps from '../GoogleMaps/GoogleMaps';
 
 export default function AddEventForm({ onAdd, user }) {
     const [formData, setFormData] = useState({
@@ -51,7 +52,7 @@ export default function AddEventForm({ onAdd, user }) {
             <form onSubmit={handleSubmit}>
                 <input type="text" name="title" value={formData.title} onChange={handleChange} placeholder="Title" required />
                 <input type="text" name="description" value={formData.description} onChange={handleChange} placeholder="Description" required />
-                <input type="text" name="venue" value={formData.venue} onChange={handleChange} placeholder="Venue" required />
+                {/* <<input type="text" name="venue" value={formData.venue} onChange={handleChange} placeholder="Venue" required />> */}
                 <input type="date" name="date" value={formData.date} onChange={handleChange} placeholder="Date" required />
                 <input type="number" name="price" value={formData.price} onChange={handleChange} placeholder="Price" />
                 <input type="text" name="supportingActs" value={formData.supportingActs} onChange={handleChange} placeholder="Supporting Acts" />
@@ -59,6 +60,7 @@ export default function AddEventForm({ onAdd, user }) {
                 <input type="text" name="ticketLink" value={formData.ticketLink} onChange={handleChange} placeholder="Ticket Link" />
                 <button type="submit">Add Event</button>
             </form>
+                <GoogleMaps venue={formData.venue} onChange={handleChange}/>
         </div>
     );
 }
