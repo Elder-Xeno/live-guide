@@ -85,18 +85,14 @@ export default function GoogleMaps({handleVenue}) { useEffect(() => {
     }
   }, [])
   return <><div class="pac-card" id="pac-card">
-      <div>
-
-
-          </div>
-      </div>
+    </div>
       <div id="pac-container"> Venue Search
           <input id="pac-input" type="text" placeholder="Enter a location" />
       </div>
  <><div id="map"></div><div id="infowindow-content">
       <span id="place-name" class="title"></span><br />
       <span id="place-address"></span>
-  </div></></>
+    </div></></>
   
 };
   

@@ -34,7 +34,9 @@
     text-indent: 520px;
 }
   
-
+.event-post a:visited {
+  color: blue;
+}
 
   @media only screen and (max-width: 768px) {
     .event-post {

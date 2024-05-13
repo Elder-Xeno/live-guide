@@ -41,7 +41,7 @@ export default function AddPostForm({ onAdd }) {
             console.error('Error adding post:', error);
         }
     };
-
+    
     return (
         <>
             <h1>Add Post</h1>

@@ -10,3 +10,8 @@
     left: 50%;
     transform: translateX(-50%);
 }
+
+.sign-up-button {
+    background-color: green;
+    color: white;
+}

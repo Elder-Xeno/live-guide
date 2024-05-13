@@ -12,3 +12,7 @@
     transform: translateX(-50%);
 }
 
+.submit-button {
+    background-color: green;
+    color: white;
+  }
