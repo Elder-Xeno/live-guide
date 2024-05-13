@@ -8,7 +8,7 @@ const postSchema = new mongoose.Schema({
   },
   userName: {
     type: String,
-    required: true
+    // required: true
   },
   content: {
     type: String,

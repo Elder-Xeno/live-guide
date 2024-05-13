@@ -18,13 +18,11 @@ export async function getEventPosts() {
     return sendRequest(`${BASE_URL}/events`);
 }
 
-export async function createPost(postData, userName) {
-    const newPost = { ...postData, userName };
-    return addPost(newPost);
+export async function createPost(postData) {
+    return addPost(postData);
 }
 
-export async function createEvent(eventData, userName) {
-    const newEvent = { ...eventData, userName };
-    console.log("New Event Data:", newEvent);
-    return addEvent(newEvent);
+export async function createEvent(eventData) {
+    console.log("New Event Data:", eventData);
+    return addEvent(eventData);
 }

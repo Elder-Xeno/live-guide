@@ -8,7 +8,7 @@ const gigSchema = new mongoose.Schema({
   },
   userName: {
     type: String,
-    required: true
+    // required: true
   },
   title: {
     type: String,

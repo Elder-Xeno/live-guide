@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { createEvent } from '../../utilities/posts-api';
 
-export default function AddEventForm({ onAdd }) {
+export default function AddEventForm({ onAdd, user }) {
     const [formData, setFormData] = useState({
         title: '',
         description: '',
@@ -24,7 +24,11 @@ export default function AddEventForm({ onAdd }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const newEvent = await createEvent(formData);
+            const newEvent = await createEvent({
+                ...formData,
+                user: user._id,
+                userName: user.name,
+            });
             await onAdd(newEvent);
             setFormData({
                 title: '',
@@ -39,7 +43,7 @@ export default function AddEventForm({ onAdd }) {
         } catch (error) {
             console.error('Error adding event:', error);
         }
-    };    
+    };
 
     return (
         <div className="add-event-form">

@@ -11,10 +11,10 @@ module.exports = {
 async function createPost(req, res) {
     try {
         const post = await Post.create({
-          ...req.body,
-          user: req.user._id
+            ...req.body,
+            user: req.user._id
         });
-        await post.populate('user', 'name').execPopulate();
+        await post.populate({ path: 'user', select: '_id name' });
         res.status(201).json(post);
     } catch (err) {
         res.status(400).json(err);
@@ -36,10 +36,11 @@ async function createEvent(req, res) {
             user: req.user._id
         });
         const savedGig = await gig.save();
-        await savedGig.populate('user', 'name').execPopulate();
+        await savedGig.populate({ path: 'user', select: '_id name' });
         res.status(201).json(savedGig);
     } catch (error) {
-        res.status(400).json({ error: "Failed to save event" });
+        console.error("Error saving event:", error);
+        res.status(400).json({ error: "Failed to save event", details: error.message });
     }
 }
 
