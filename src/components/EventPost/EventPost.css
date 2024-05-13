@@ -2,7 +2,7 @@
   background-image: url("https://i.imgur.com/p6lXGF4.png");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 1100px;
+  background-size: 1300px;
   border-radius: 8px;
   font-family: Ticketing;
   /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
@@ -16,7 +16,7 @@
   .event-post p {
     margin: 0 0 5px;
     text-align: left;
-    text-indent: 350px;
+    text-indent: 300px;
     font-size: 22px;
   }
   
@@ -29,7 +29,7 @@
   .event-post h2 {
     font-family: Ticketing;
     color: black;
-    font-size: 40px;
+    font-size: 30px;
     text-align: left;
     text-indent: 520px;
 }
@@ -53,4 +53,14 @@
       text-align: left;
       margin: 0px;
     }
+  }
+
+  .spotify-link {
+    color: white;
+    background-color: green;
+  }
+
+  .ticket-link {
+    color: white;
+    background-color: orange;
   }

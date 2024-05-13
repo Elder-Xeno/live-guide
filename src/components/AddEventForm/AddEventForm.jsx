@@ -72,7 +72,8 @@ export default function AddEventForm({ onAdd, user }) {
                 <br></br>
                 <button className='submit-button' type="submit">Add Event</button>
             </form>
-            <GoogleMaps venue={formData.venue} handleVenue={handleVenue} />
+            <br></br>
+            <GoogleMaps venue={formData.venue} handleVenue={handleVenue} required />
         </div></>
     );
 }
