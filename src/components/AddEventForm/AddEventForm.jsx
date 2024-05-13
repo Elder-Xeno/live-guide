@@ -26,11 +26,20 @@ export default function AddEventForm({ onAdd }) {
         try {
             const newEvent = await createEvent(formData);
             await onAdd(newEvent);
-            setFormData({});
+            setFormData({
+                title: '',
+                description: '',
+                venue: '',
+                date: '',
+                price: 0,
+                supportingActs: '',
+                spotifyLink: '',
+                ticketLink: '',
+            });
         } catch (error) {
             console.error('Error adding event:', error);
         }
-    };
+    };    
 
     return (
         <div className="add-event-form">
