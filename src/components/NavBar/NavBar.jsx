@@ -10,7 +10,12 @@ export default function NavBar({ user, setUser }) {
   }
 
   return (
+    <div class="navbar-wrapper">
     <nav>
+      <input className='searchBar' type="text" placeholder="Search..." />
+      &nbsp; | &nbsp;
+      <span>Welcome, {user.name}</span>
+      &nbsp; | &nbsp;
       <Link to="/profile">Profile</Link>
       &nbsp; | &nbsp;
       <Link to="/">News Feed</Link>
@@ -19,10 +24,10 @@ export default function NavBar({ user, setUser }) {
       &nbsp; | &nbsp;
       <Link to="/add-event">Add Gig/Event</Link>
       &nbsp; | &nbsp;
-      <input type="text" placeholder="Search..." />
-      &nbsp; | &nbsp;
-      <span>Welcome, {user.name}</span>
-      &nbsp;&nbsp;<Link to="" onClick={handleLogOut}>Log Out</Link>
+      &nbsp;&nbsp;
+      &nbsp;&nbsp;
+      <Link to="" onClick={handleLogOut}>Log Out</Link>
     </nav>
+    </div>
   );
 }

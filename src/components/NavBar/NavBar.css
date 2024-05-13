@@ -1,3 +1,32 @@
-body {
-    margin-top: 220px;
+.navbar-wrapper {
+    margin-top: 230px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px 0px 10px 0px;
+    margin-left: 150px;
+    margin-right: 150px;
+    background-color: rgb(113, 114, 114);
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+
+.searchBar {
+    color: black;
+}
+
+a:hover {
+    color: red;
+}
+
+a:visited {
+    color: white;
 }

@@ -1,4 +1,5 @@
 .add-post-form {
+  margin-top: 20px;
   background-color: darkgray;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -36,5 +37,6 @@
   }
 
 h1 {
-    padding-top: 30px;
+    padding-top: 250px;
+    color: white;
 }

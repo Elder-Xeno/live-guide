@@ -1,21 +1,23 @@
 .event-post {
-  background-image: url("https://i.imgur.com/WgLC1Yn.png");
+  background-image: url("https://i.imgur.com/p6lXGF4.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 1100px;
   border-radius: 8px;
+  font-family: Ticketing;
   /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
   padding: 200px;
   margin-bottom: 0px;
-  margin-right: 50px;
+  margin-right: 5px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   }
   
   .event-post p {
-    margin: 0 0 10px;
+    margin: 0 0 5px;
     text-align: left;
     text-indent: 350px;
+    font-size: 22px;
   }
   
   .event-post img {
@@ -25,9 +27,11 @@
   }
 
   .event-post h2 {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: blue;
-    font-size: 30px;
+    font-family: Ticketing;
+    color: black;
+    font-size: 40px;
+    text-align: left;
+    text-indent: 520px;
 }
   
 
