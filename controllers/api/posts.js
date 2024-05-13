@@ -1,5 +1,6 @@
 const Post = require('../../models/post');
 const Gig = require('../../models/gig');
+const upload = require('../../src/utilities/multer-upload');
 
 module.exports = {
     createPost,
@@ -10,9 +11,11 @@ module.exports = {
 
 async function createPost(req, res) {
     try {
+        const mediaUrls = req.files.map(file => file.location);  // media urls from uploaded files
         const post = await Post.create({
-            ...req.body,
-            user: req.user._id
+            content: req.body.content,
+            user: req.user._id,
+            media: mediaUrls
         });
         await post.populate({ path: 'user', select: '_id name' });
         res.status(201).json(post);
