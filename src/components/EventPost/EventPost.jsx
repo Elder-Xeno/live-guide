@@ -3,7 +3,7 @@ import './EventPost.css';
 export default function EventPost({ eventPost }) {
     return (
         <div className="event-post">
-            <p>Posted by: {eventPost.userName}</p>
+            <p>Posted by: {eventPost.user.name}</p>
             <h3>{eventPost.title}</h3>
             <p>Description: {eventPost.description}</p>
             <p>Venue: {eventPost.venue}</p>
