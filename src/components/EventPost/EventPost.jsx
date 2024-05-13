@@ -12,7 +12,6 @@ export default function EventPost({ eventPost }) {
             <p>Supporting Acts: {eventPost.supportingActs.join(', ')}</p>
             <p>Spotify Link: <a href={eventPost.spotifyLink}>{eventPost.spotifyLink}</a></p>
             <p>Ticket Link: <a href={eventPost.ticketLink}>{eventPost.ticketLink}</a></p>
-            <p>Posted by: {eventPost.userName}</p>
         </div>
     );
 }

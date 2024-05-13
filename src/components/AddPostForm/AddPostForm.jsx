@@ -6,7 +6,7 @@ import './AddPostForm.css';
 
 export default function AddPostForm({ onAdd }) {
     const [content, setContent] = useState('');
-    const [media, setMedia] = useState([]);
+    const [media, setMedia] = useState(null);
     const [user, setUser] = useState(null);
 
     useEffect(() => {
@@ -23,15 +23,20 @@ export default function AddPostForm({ onAdd }) {
     }, []);
 
     const handleChangeContent = (e) => setContent(e.target.value);
-    const handleChangeMedia = (e) => setMedia([...media, e.target.value]);
+    const handleFileChange = (e) => setMedia(e.target.files);
     const handleSubmit = async (e) => {
         e.preventDefault();
+        const formData = new FormData();
+        formData.append('content', content);
+        for (let i = 0; i < media.length; i++) {
+            formData.append('media', media[i]);
+        }
+
         try {
-            const postData = { content, media, user };
-            const newPost = await createPost(postData);
-            await onAdd(newPost, user); // pass user along with new post
+            const newPost = await createPost(formData);
+            await onAdd(newPost, user);
             setContent('');
-            setMedia([]);
+            setMedia(null);
         } catch (error) {
             console.error('Error adding post:', error);
         }
@@ -39,14 +44,14 @@ export default function AddPostForm({ onAdd }) {
 
     return (
         <>
-        <h1>Add Post</h1>
-        <form className="add-post-form" onSubmit={handleSubmit}>
-            <label>Message:</label>
-            <textarea value={content} onChange={handleChangeContent} required />
-            <label>Photos/Videos:</label>
-            <textarea value={media} onChange={handleChangeMedia} />
-            <button type="submit">Add Post</button>
-        </form>
+            <h1>Add Post</h1>
+            <form className="add-post-form" onSubmit={handleSubmit} encType="multipart/form-data">
+                <label>Message:</label>
+                <textarea value={content} onChange={handleChangeContent} required />
+                <label>Photos/Videos:</label>
+                <input type="file" multiple onChange={handleFileChange} />
+                <button type="submit">Add Post</button>
+            </form>
         </>
     );
 }
