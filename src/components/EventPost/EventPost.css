@@ -1,66 +1,93 @@
 .event-post {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
   background-image: url("https://i.imgur.com/p6lXGF4.png");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 1300px;
+  background-size: cover;
+  height: 300px;
   border-radius: 8px;
-  font-family: Ticketing;
-  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
-  padding: 200px;
-  margin-bottom: 0px;
-  margin-right: 5px;
+  font-family: 'Ticketing';
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  }
-  
-  .event-post p {
-    margin: 0 0 5px;
-    text-align: left;
-    text-indent: 300px;
-    font-size: 22px;
-  }
-  
-  .event-post img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-  }
-
-  .event-post h2 {
-    font-family: Ticketing;
-    color: black;
-    font-size: 30px;
-    text-align: left;
-    text-indent: 520px;
 }
-  
+
+.event-post-content {
+  position: relative;
+  width: 90%;
+  height: 100%;
+  overflow-y: auto;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.event-post h2,
+.event-post p {
+  margin: 0;
+  font-size: 14px;
+  color: #000;
+  text-align: left;
+}
+
+.event-post h2 {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.event-post p {
+  margin-bottom: 8px;
+}
+
 .event-post a:visited {
   color: blue;
 }
 
-  @media only screen and (max-width: 768px) {
-    .event-post {
-      background-image: url("https://i.imgur.com/1rZXbwy.png");
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: 100%;
-      /* border-radius: 8px; */
-      padding-top: 200px;
-      margin-bottom: 0px;
-    }
+.spotify-link,
+.ticket-link {
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+}
 
-    .event-post p {
-      text-align: left;
-      margin: 0px;
-    }
+.spotify-link {
+  background-color: green;
+}
+
+.ticket-link {
+  background-color: orange;
+}
+
+@media only screen and (max-width: 768px) {
+  .event-post {
+    max-width: 100%;
+    height: auto;
+    background-size: cover;
   }
 
-  .spotify-link {
-    color: white;
-    background-color: green;
+  .event-post-content {
+    width: 100%;
+    padding: 10px;
+    padding-left: 10px;
   }
 
-  .ticket-link {
-    color: white;
-    background-color: orange;
+  .event-post h2 {
+    font-size: 20px;
   }
+
+  .event-post p {
+    font-size: 14px;
+  }
+}

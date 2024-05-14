@@ -1,6 +1,5 @@
 const Post = require('../../models/post');
 const Gig = require('../../models/gig');
-const upload = require('../../src/utilities/multer-upload');
 
 module.exports = {
     createPost,
@@ -10,8 +9,11 @@ module.exports = {
 };
 
 async function createPost(req, res) {
+    console.log("Received request to create post:", req.body);
+    console.log("Files received:", req.files);
+
     try {
-        const mediaUrls = req.files.map(file => file.location);  // media urls from uploaded files
+        const mediaUrls = req.files.map(file => file.location);  // check if files are received
         const post = await Post.create({
             content: req.body.content,
             user: req.user._id,
@@ -20,6 +22,7 @@ async function createPost(req, res) {
         await post.populate({ path: 'user', select: '_id name' });
         res.status(201).json(post);
     } catch (err) {
+        console.error('Error in createPost:', err);
         res.status(400).json(err);
     }
 }

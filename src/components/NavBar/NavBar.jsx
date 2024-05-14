@@ -10,7 +10,7 @@ export default function NavBar({ user, setUser }) {
   }
 
   return (
-    <div class="navbar-wrapper">
+    <div className="navbar-wrapper">
     <nav>
       <input className='searchBar' type="text" placeholder="Search..." />
       &nbsp; | &nbsp;

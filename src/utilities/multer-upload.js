@@ -6,11 +6,9 @@ const upload = multer({
     storage: multerS3({
         s3: s3,
         bucket: process.env.S3_BUCKET,
-        metadata: function (req, file, cb) {
-            cb(null, { fieldName: file.fieldname });
-        },
         key: function (req, file, cb) {
-            cb(null, Date.now().toString() + '_' + file.originalname)
+            console.log('Uploading file:', file.originalname);
+            cb(null, `${Date.now().toString()}_${file.originalname}`);
         }
     })
 });

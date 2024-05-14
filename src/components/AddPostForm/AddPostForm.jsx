@@ -32,15 +32,20 @@ export default function AddPostForm({ onAdd }) {
             formData.append('media', media[i]);
         }
 
-        try {
-            const newPost = await createPost(formData);
-            await onAdd(newPost, user);
-            setContent('');
-            setMedia(null);
-        } catch (error) {
-            console.error('Error adding post:', error);
-        }
-    };
+    console.log('FormData Keys:', Array.from(formData.keys()));
+    for (let key of formData.keys()) {
+        console.log(`${key}:`, formData.getAll(key));
+    }
+
+    try {
+        const newPost = await createPost(formData);
+        await onAdd(newPost, user);
+        setContent('');
+        setMedia([]);
+    } catch (error) {
+        console.error('Error adding post:', error);
+    }
+};
     
     return (
         <>
