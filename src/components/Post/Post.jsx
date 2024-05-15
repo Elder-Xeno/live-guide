@@ -1,6 +1,7 @@
 import './Post.css';
 
 export default function Post({ post }) {
+  
     return (
       <div className="post">
         <p>{post.content}</p>

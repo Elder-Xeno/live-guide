@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { getPosts, getEventPosts } from '../../utilities/posts-api';
 import Post from '../../components/Post/Post';
 import EventPost from '../../components/EventPost/EventPost';
@@ -11,19 +11,19 @@ export default function NewsFeed() {
     const fetchData = async () => {
       try {
         const postsData = await getPosts();
-        setPosts(postsData);
+        const sortedPosts = postsData.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+        setPosts(sortedPosts);
 
         const eventPostsData = await getEventPosts();
-        setEventPosts(eventPostsData);
+        const sortedEventPosts = eventPostsData.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+        setEventPosts(sortedEventPosts);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
     };
 
-     fetchData();
+    fetchData();
   }, []);
-
-
 
   return (
     <div className="news-feed">
