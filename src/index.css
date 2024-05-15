@@ -3,13 +3,13 @@
 }
 
 body {
-  margin-top: 50px;
-  background-image: url("https://i.imgur.com/50fOSGM.png");
+  margin-top: 0px;
+  background-image: url("https://i.imgur.com/ZJ8u5O6.png");
   font-family: 'Courier New', Courier, monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--tan-4);
-  padding: 2vmin;
+  padding: 0vmin;
   height: 100vh;
   background-attachment: fixed;
 }

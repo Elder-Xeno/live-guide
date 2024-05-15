@@ -19,6 +19,7 @@ export default function NavBar({ user, setUser }) {
   return (
     <div className="navbar-wrapper">
       <nav>
+        <img src="https://i.imgur.com/NOoLypo.png" alt="Navbar Logo" className="navbar-logo" />
         <input className="searchBar" type="text" placeholder="Search..." />
         <button className="nav-toggle" onClick={toggleNav}>
           ☰

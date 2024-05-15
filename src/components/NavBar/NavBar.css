@@ -1,10 +1,15 @@
 .navbar-wrapper {
     position: fixed;
-    top: 230px;
+    top: 0px;
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: rgb(113, 114, 114);
+    background-image: url("https://i.imgur.com/ZJ8u5O6.png");
+}
+
+.navbar-logo {
+    max-width: 150px; /* Adjust max-width as needed */
+    margin-right: 20px; /* Adjust margin as needed */
 }
 
 nav {
