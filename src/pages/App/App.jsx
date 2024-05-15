@@ -4,6 +4,7 @@ import { getUser } from '../../utilities/users-service';
 import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
 import NewsFeed from '../NewsFeed/NewsFeed';
+import Profile from '../Profile/Profile';
 import NavBar from '../../components/NavBar/NavBar';
 import AddPostForm from '../../components/AddPostForm/AddPostForm';
 import AddEventForm from '../../components/AddEventForm/AddEventForm';
@@ -26,6 +27,7 @@ export default function App() {
           <>
             <NavBar user={user} setUser={setUser} />
             <Routes>
+              {/* <Route path="/" element={<Profile />} /> */}
               <Route path="/" element={<NewsFeed />} />
               <Route path="/add-post" element={<AddPostForm onAdd={handleAddPost} user={user} />} />
               <Route path="/add-event" element={<AddEventForm onAdd={handleAddEvent} user={user} />} />

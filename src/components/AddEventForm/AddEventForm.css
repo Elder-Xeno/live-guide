@@ -1,6 +1,11 @@
 .add-event-form {
     margin-top: 20px;
     background-color: darkgray;
+    background-image: url("https://static.vecteezy.com/system/resources/previews/007/388/425/original/silhouettes-of-a-group-of-women-in-a-concert-vector.jpg?fbclid=IwZXh0bgNhZW0CMTAAAR0rvlx5A6wL4u1OHuLO1-nusIcrl93vXvpvwxU5WTTt9xe_lRBppPcPMTo_aem_AakO8kU65uZfqT8lO4BWKFyUzCFqhzch7dCdEuAlAg7oP2_VTaksXziVxlaCmME5j5km79B9y1Gwm0Cf1u4H4xB6");
+    background-size: 130%;
+    background-repeat: no-repeat;
+    background-position: center;
+
     border-radius: 8px;
     color: black;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
