@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getPosts, getEventPosts } from '../../utilities/posts-api';
 import Post from '../../components/Post/Post';
 import EventPost from '../../components/EventPost/EventPost';
+import "./NewsFeed.css"
 
 export default function NewsFeed() {
   const [posts, setPosts] = useState([]);
@@ -27,14 +28,14 @@ export default function NewsFeed() {
 
   return (
     <div className="news-feed">
-      <h1>News Feed</h1>
-
-      <h2>Regular Posts</h2>
+      <img src="https://i.imgur.com/wW4UdAj.png" alt="newsfeed-logo" className="newsfeed-logo" />
+      <br/>
+      <img src="https://i.imgur.com/DNJ1XS7.png" alt="posts-logo" className="posts-logo" />
       {posts.map(post => (
         <Post key={post._id} post={post} />
       ))}
 
-      <h2>Event/Gig Posts</h2>
+      <img src="https://i.imgur.com/eAbazi0.png" alt="gigs-logo" className="gigs-logo" />
       {eventPosts.map(eventPost => (
         <EventPost key={eventPost._id} eventPost={eventPost} />
       ))}

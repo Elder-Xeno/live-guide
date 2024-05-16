@@ -7,7 +7,7 @@ export default function AuthPage({ setUser }) {
   const [showSignUp, setShowSignUp] = useState(false);
   return (
     <main>
-      <img src="https://i.imgur.com/NOoLypo.png" alt="Login Logo" className="login-logo" />
+      <img src="https://i.imgur.com/FpyHsKx.png" alt="Login Logo" className="login-logo" />
       <h3>Log-in or sign-up below.</h3>
       <button onClick={() => setShowSignUp(!showSignUp)}>{showSignUp ? 'Log In' : 'Sign Up'}</button>
       { showSignUp ?
