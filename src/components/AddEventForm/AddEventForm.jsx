@@ -57,9 +57,9 @@ export default function AddEventForm({ onAdd, user }) {
             <><img src="https://i.imgur.com/4IWQE6M.png" alt="add-gig-logo" className="add-gig-logo" />
             <div className="add-event-form">
             <form onSubmit={handleSubmit}>
-                <input type="text" name="title" value={formData.title} onChange={handleChange} placeholder="Title" required />
+                <input type="text" name="title" value={formData.title} onChange={handleChange} placeholder="Title" required style={{ width: '500px' }} />
                 <br></br>
-                <input type="text" name="description" value={formData.description} onChange={handleChange} placeholder="Description" required />
+                <input type="text" name="description" value={formData.description} onChange={handleChange} placeholder="Description" required  />
                 <br></br>
                 <input type="date" name="date" value={formData.date} onChange={handleChange} placeholder="Date" required />
                 <br></br>
@@ -74,7 +74,8 @@ export default function AddEventForm({ onAdd, user }) {
                 <button className='submit-button' type="submit">Add Event</button>
             </form>
             <br></br>
-            <GoogleMaps venue={formData.venue} handleVenue={handleVenue} required />
+            <GoogleMaps venue={formData.venue} handleVenue={handleVenue} required/>
+            {/* <button className='google-button'>Find Venue</button> */}
         </div></>
     );
 }

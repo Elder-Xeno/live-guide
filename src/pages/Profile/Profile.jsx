@@ -29,13 +29,13 @@ export default function Profile({ user }) {
   return (
     <div className="profile">
       <img src="https://i.imgur.com/bbQ3tnW.png" alt="profile-logo" className="profile-logo" />
-
-      <h2>Regular Posts</h2>
+      <br></br>
+      <img src="https://i.imgur.com/DNJ1XS7.png" alt="posts-logo" className="posts-logo" />
       {posts.map(post => (
         <Post key={post._id} post={post} />
       ))}
 
-      <h2>Event/Gig Posts</h2>
+      <img src="https://i.imgur.com/eAbazi0.png" alt="gigs-logo" className="gigs-logo" />
       {eventPosts.map(eventPost => (
         <EventPost key={eventPost._id} eventPost={eventPost} />
       ))}
