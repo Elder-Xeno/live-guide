@@ -48,16 +48,27 @@ export default function NavBar({ user, setUser }) {
     <div className="navbar-wrapper">
       <nav>
         <img src="https://i.imgur.com/FpyHsKx.png" alt="Navbar Logo" className="navbar-logo" />
-        <form onSubmit={handleSearchSubmit} className="search-form">
-          <input
-            className="searchBar"
-            type="text"
-            value={searchQuery}
-            onChange={handleSearchChange}
-            placeholder="Search..."
-          />
-          <button type="submit">Search</button>
-        </form>
+        <div className="search-container">
+          <form onSubmit={handleSearchSubmit} className="search-form">
+            <input
+              className="searchBar"
+              type="text"
+              value={searchQuery}
+              onChange={handleSearchChange}
+              placeholder="Search..."
+            />
+            <button type="submit" className="searchButton">Search</button>
+          </form>
+          {searchResults.length > 0 && (
+            <div className="search-dropdown">
+              {searchResults.map(user => (
+                <div key={user._id} className="search-result" onClick={() => handleSelectUser(user._id)}>
+                  <p>{user.name}</p>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
         <button className="nav-toggle" onClick={toggleNav}>
           ☰
         </button>
@@ -75,15 +86,6 @@ export default function NavBar({ user, setUser }) {
           <Link to="" onClick={handleLogOut}>Log Out</Link>
         </div>
       </nav>
-      {searchResults.length > 0 && (
-        <div className="search-dropdown">
-          {searchResults.map(user => (
-            <div key={user._id} className="search-result" onClick={() => handleSelectUser(user._id)}>
-              <p>{user.name}</p>
-            </div>
-          ))}
-        </div>
-      )}
     </div>
   );
 }
