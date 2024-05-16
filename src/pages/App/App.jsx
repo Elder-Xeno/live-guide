@@ -8,6 +8,7 @@ import Profile from '../Profile/Profile';
 import NavBar from '../../components/NavBar/NavBar';
 import AddPostForm from '../../components/AddPostForm/AddPostForm';
 import AddEventForm from '../../components/AddEventForm/AddEventForm';
+import UserProfile from '../UserProfile/UserProfile';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -29,6 +30,7 @@ export default function App() {
             <Routes>
               <Route path="/" element={<NewsFeed />} />
               <Route path="/profile" element={<Profile user={user} />} />
+              <Route path="/profile/:userId" element={<UserProfile />} />
               <Route path="/add-post" element={<AddPostForm onAdd={handleAddPost} user={user} />} />
               <Route path="/add-event" element={<AddEventForm onAdd={handleAddEvent} user={user} />} />
             </Routes>
@@ -39,3 +41,4 @@ export default function App() {
     </main>
   );
 }
+
