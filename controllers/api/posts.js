@@ -12,11 +12,15 @@ async function createPost(req, res) {
     console.log("Received request to create post:", req.body);
     console.log("Files received:", req.files);
 
-    try {
-        const mediaUrls = req.files.map(file => file.location);  // check if files are received
+try {
+        if (!req.files) {
+            return res.status(400).json({ error: "No files uploaded" });
+        }
+        const mediaUrls = req.files.map(file => file.location);  // get the URLs of the uploaded files
         const post = await Post.create({
             content: req.body.content,
             user: req.user._id,
+            userName: req.user.name,
             media: mediaUrls
         });
         await post.populate({ path: 'user', select: '_id name' });
@@ -26,6 +30,7 @@ async function createPost(req, res) {
         res.status(400).json(err);
     }
 }
+
 
 async function createEvent(req, res) {
     try {

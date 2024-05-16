@@ -10,6 +10,7 @@ require('./config/database');
 const app = express();
 
 app.use(logger('dev'));
+app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
 // Configure both serve-favicon & static middleware

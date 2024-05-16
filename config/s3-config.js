@@ -8,6 +8,13 @@ aws.config.update({
     region: process.env.AWS_REGION
 });
 
+
 const s3 = new aws.S3();
+
+
+// f(){
+//     s3.upload()
+// }
+
 
 module.exports = s3;
