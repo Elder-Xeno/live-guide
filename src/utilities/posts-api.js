@@ -16,8 +16,16 @@ export async function getPosts() {
   return sendRequest(BASE_URL);
 }
 
+export async function getPostsForUser(userId) {
+  return sendRequest(`${BASE_URL}/user/${userId}`);
+}
+
 export async function getEventPosts() {
   return sendRequest(`${BASE_URL}/events`);
+}
+
+export async function getEventPostsForUser(userId) {
+  return sendRequest(`${BASE_URL}/events/${userId}`);
 }
 
 export async function createPost(postData) {

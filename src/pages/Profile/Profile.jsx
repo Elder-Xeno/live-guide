@@ -1,21 +1,20 @@
-
 import React, { useState, useEffect } from 'react';
-import { getPosts, getEventPosts } from '../../utilities/posts-api';
+import * as postsAPI from '../../utilities/posts-api';
 import Post from '../../components/Post/Post';
 import EventPost from '../../components/EventPost/EventPost';
 
-export default function Profile({ userId }) {
+export default function Profile({ user }) {
   const [posts, setPosts] = useState([]);
   const [eventPosts, setEventPosts] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const userPosts = await getPosts(userId);
+        const userPosts = await postsAPI.getPostsForUser(user._id);
         const sortedUserPosts = userPosts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
         setPosts(sortedUserPosts);
 
-        const userEventPosts = await getEventPosts(userId);
+        const userEventPosts = await postsAPI.getEventPostsForUser(user._id);
         const sortedUserEventPosts = userEventPosts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
         setEventPosts(sortedUserEventPosts);
       } catch (error) {
@@ -24,7 +23,7 @@ export default function Profile({ userId }) {
     };
 
     fetchData();
-  }, [userId]);
+  }, [user]);
 
   return (
     <div className="profile">
