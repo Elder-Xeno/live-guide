@@ -50,13 +50,7 @@ export default function NavBar({ user, setUser }) {
         <img src="https://i.imgur.com/FpyHsKx.png" alt="Navbar Logo" className="navbar-logo" />
         <div className="search-container">
           <form onSubmit={handleSearchSubmit} className="search-form">
-            <input
-              className="searchBar"
-              type="text"
-              value={searchQuery}
-              onChange={handleSearchChange}
-              placeholder="Search..."
-            />
+            <input className="searchBar" type="text" value={searchQuery} onChange={handleSearchChange} placeholder="Search..." />
             <button type="submit" className="searchButton">Search</button>
           </form>
           {searchResults.length > 0 && (
@@ -69,9 +63,7 @@ export default function NavBar({ user, setUser }) {
             </div>
           )}
         </div>
-        <button className="nav-toggle" onClick={toggleNav}>
-          ☰
-        </button>
+        <button className="nav-toggle" onClick={toggleNav}>☰</button>
         <div className={`links ${isNavOpen ? 'open' : ''}`}>
           <span>Welcome, {user.name}</span>
           &nbsp; | &nbsp;
@@ -81,7 +73,7 @@ export default function NavBar({ user, setUser }) {
           &nbsp; | &nbsp;
           <Link to="/add-post">Add Post</Link>
           &nbsp; | &nbsp;
-          <Link to="/add-event">Add Gig/Event</Link>
+          <Link to="/add-event">Add Gig</Link>
           &nbsp; | &nbsp;
           <Link to="" onClick={handleLogOut}>Log Out</Link>
         </div>

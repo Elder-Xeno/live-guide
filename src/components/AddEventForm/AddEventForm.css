@@ -21,3 +21,8 @@
     background-color: green;
     color: white;
   }
+
+  .add-gig-logo {
+    margin-top: 5px;
+    max-width: 30%;
+  }

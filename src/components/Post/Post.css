@@ -1,24 +1,44 @@
+.post-container {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
 .post {
-  background-image: url("https://i.imgur.com/1snTSP0.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 700px;
-  border-radius: 8px;
-  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
-  padding: 200px;
-  margin-bottom: 20px;
+  background-image: url("https://i.imgur.com/iATBtIO.png");
+  background-size: cover;
+  padding:20px;
+  margin-bottom: 100px;
+  width: 500px;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 1); /* Adjust values for blur, spread, and color as needed */
 }
 
-.caption,
-.posted-by {
-  font-size: 20px;
-}
-
-.post p {
-    margin: 0 0 10px;
-  }
-  
 .post img {
-    max-width: 36%;
-    height: 100%;
-  }
+  width: 450px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.caption {
+  font-family:'RockSalt';
+  text-align: center;
+  font-size: 18px;
+  color: black;
+  padding: 0px;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+
+.posted-by {
+  position: absolute;
+  text-align: center;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  padding: 0px;
+  box-sizing: border-box;
+  margin-top: 510px;
+}

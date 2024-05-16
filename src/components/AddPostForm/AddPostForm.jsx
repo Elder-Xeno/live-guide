@@ -57,7 +57,7 @@ export default function AddPostForm({ onAdd }) {
 
   return (
     <>
-      <h1>Add Post</h1>
+      <img src="https://i.imgur.com/9fmRvSe.png" alt="add-post-logo" className="add-post-logo" />
       <form
         className="add-post-form"
         onSubmit={handleSubmit}

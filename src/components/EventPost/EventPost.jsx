@@ -10,7 +10,7 @@ export default function EventPost({ eventPost }) {
         <div className="event-post">
             <div className="event-post-content">
             <h2 className='event.title' style={{ textTransform: 'uppercase' }}>{eventPost.title}</h2>
-                <p>Description: {eventPost.description}</p>
+                <p>{eventPost.description}</p>
                 <p>Date: {formatDate(eventPost.date)}</p>
                 <p>Venue:  <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(eventPost.venue)}`} target="_blank">{eventPost.venue}</a></p>
                 <p>Price: ${eventPost.price}</p>

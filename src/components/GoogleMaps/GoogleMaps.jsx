@@ -50,7 +50,7 @@ export default function GoogleMaps({handleVenue}) { useEffect(() => {
             
             const place = autocomplete.getPlace();
             console.log(place)
-            handleVenue(`${place.name}`)
+            handleVenue(`${place.name}, ${place.formatted_address}`)
             // ${place.formatted_address}
       
           if (!place.geometry || !place.geometry.location) {

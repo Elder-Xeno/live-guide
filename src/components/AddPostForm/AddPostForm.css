@@ -43,3 +43,7 @@ h1 {
     color: white;
 }
 
+.add-post-logo {
+  margin-top: 5px;
+  max-width: 30%;
+}

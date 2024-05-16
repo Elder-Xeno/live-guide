@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import * as postsAPI from '../../utilities/posts-api';
 import Post from '../../components/Post/Post';
 import EventPost from '../../components/EventPost/EventPost';
+import "./Profile.css"
 
 export default function Profile({ user }) {
   const [posts, setPosts] = useState([]);
@@ -27,7 +28,7 @@ export default function Profile({ user }) {
 
   return (
     <div className="profile">
-      <h1>Profile</h1>
+      <img src="https://i.imgur.com/bbQ3tnW.png" alt="profile-logo" className="profile-logo" />
 
       <h2>Regular Posts</h2>
       {posts.map(post => (

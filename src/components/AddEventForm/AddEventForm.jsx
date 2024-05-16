@@ -54,7 +54,8 @@ export default function AddEventForm({ onAdd, user }) {
     };
 
     return (
-            <><h1>Add Gig/Event</h1><div className="add-event-form">
+            <><img src="https://i.imgur.com/4IWQE6M.png" alt="add-gig-logo" className="add-gig-logo" />
+            <div className="add-event-form">
             <form onSubmit={handleSubmit}>
                 <input type="text" name="title" value={formData.title} onChange={handleChange} placeholder="Title" required />
                 <br></br>
