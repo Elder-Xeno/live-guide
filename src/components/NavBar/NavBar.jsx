@@ -19,7 +19,24 @@ export default function NavBar({ user, setUser }) {
     setIsNavOpen(!isNavOpen);
   }
 
-  const handleSearch = async (e) => {
+  const handleSearchChange = async (e) => {
+    const query = e.target.value;
+    setSearchQuery(query);
+    if (query.trim()) {
+      const users = await usersAPI.searchUsers(query);
+      setSearchResults(users);
+    } else {
+      setSearchResults([]);
+    }
+  };
+
+  const handleSelectUser = (userId) => {
+    navigate(`/profile/${userId}`);
+    setSearchQuery('');
+    setSearchResults([]);
+  };
+
+  const handleSearchSubmit = async (e) => {
     e.preventDefault();
     if (searchQuery.trim()) {
       const users = await usersAPI.searchUsers(searchQuery);
@@ -31,12 +48,12 @@ export default function NavBar({ user, setUser }) {
     <div className="navbar-wrapper">
       <nav>
         <img src="https://i.imgur.com/FpyHsKx.png" alt="Navbar Logo" className="navbar-logo" />
-        <form onSubmit={handleSearch} className="search-form">
+        <form onSubmit={handleSearchSubmit} className="search-form">
           <input
             className="searchBar"
             type="text"
             value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            onChange={handleSearchChange}
             placeholder="Search..."
           />
           <button type="submit">Search</button>
@@ -58,15 +75,15 @@ export default function NavBar({ user, setUser }) {
           <Link to="" onClick={handleLogOut}>Log Out</Link>
         </div>
       </nav>
-      <div className="search-results">
-        {searchResults.map(user => (
-          <div key={user._id} className="search-result">
-            <p>Name: {user.name}</p>
-            <p>Email: {user.email}</p>
-            <button onClick={() => navigate(`/profile/${user._id}`)}>View Profile</button>
-          </div>
-        ))}
-      </div>
+      {searchResults.length > 0 && (
+        <div className="search-dropdown">
+          {searchResults.map(user => (
+            <div key={user._id} className="search-result" onClick={() => handleSelectUser(user._id)}>
+              <p>{user.name}</p>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

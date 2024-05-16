@@ -31,7 +31,6 @@ export default function UserProfile() {
     <div className="user-profile">
       <h1>{user.name}'s Profile</h1>
       <p>Email: {user.email}</p>
-      <p>Location: {user.location}</p>
 
       <h2>Regular Posts</h2>
       {posts.map(post => (

@@ -47,7 +47,7 @@ async function searchUsers(req, res) {
     const users = await User.find({
       $or: [
         { name: { $regex: query, $options: 'i' } },
-        { email: { $regex: query, $options: 'i' } }
+        // { email: { $regex: query, $options: 'i' } }
       ]
     }).select('name email');
     res.json(users);
