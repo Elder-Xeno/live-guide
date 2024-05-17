@@ -12,7 +12,7 @@ export default function Post({ post, onDelete, onUpdate, user }) {
   const handleMediaClick = (mediaUrl, isVideo) => {
     setModalMedia({ url: mediaUrl, isVideo });
   };
-
+//   overlay to view media in a larger format
   const closeModal = () => {
     setModalMedia(null);
   };
@@ -86,6 +86,8 @@ export default function Post({ post, onDelete, onUpdate, user }) {
 
       {modalMedia && (
         <div className="modal" onClick={closeModal}>
+{/* prevent an event from bubbling up the DOM tree. */}
+{/* clicking inside the modal content does not close the modal, while clicking outside the modal content does close it. */}
           <div className="modal-content" onClick={e => e.stopPropagation()}>
             <span className="close-button" onClick={closeModal}>&times;</span>
             {modalMedia.isVideo ? (

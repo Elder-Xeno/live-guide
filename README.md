@@ -26,12 +26,15 @@ User's Profile to see only the posts and events that the user has made:
 - MongoDB
 - Render
 - Express
-- AWS
+- S3 Buckets
+- AWS SDK
+- Google Maps API
 - HTML
 - CSS
+- JSX
 - Javascript
 
-## Planned Future Enchancements
+## Planned Future Enhancements
 We have plans to implement the following in the future:
 - A 'Follow' feature where users can keep up-to-date with specific users they choose.
 - A chat function for users to connect with one another.
