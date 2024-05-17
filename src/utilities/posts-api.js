@@ -3,8 +3,6 @@ import sendRequest from "./send-request";
 const BASE_URL = "/api/posts";
 
 export async function addPost(postData) {
-  // console.log("Foad ------------", postData)
-  //  { "Content-Type": "application/x-www-form-urlencoded" }
   return sendRequest(BASE_URL, "POST", postData);
 }
 
@@ -35,4 +33,8 @@ export async function createPost(postData) {
 export async function createEvent(eventData) {
   console.log("New Event Data:", eventData);
   return addEvent(eventData);
+}
+
+export async function deletePost(postId) {
+  return sendRequest(`${BASE_URL}/${postId}`, "DELETE");
 }

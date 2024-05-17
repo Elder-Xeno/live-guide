@@ -26,13 +26,17 @@ export default function Profile({ user }) {
     fetchData();
   }, [user]);
 
+  const handleDelete = (postId) => {
+    setPosts(posts.filter(post => post._id !== postId));
+  };
+
   return (
     <div className="profile">
       <img src="https://i.imgur.com/bbQ3tnW.png" alt="profile-logo" className="profile-logo" />
       <br></br>
       <img src="https://i.imgur.com/DNJ1XS7.png" alt="posts-logo" className="posts-logo" />
       {posts.map(post => (
-        <Post key={post._id} post={post} />
+        <Post key={post._id} post={post} onDelete={handleDelete} user={user} />
       ))}
 
       <img src="https://i.imgur.com/eAbazi0.png" alt="gigs-logo" className="gigs-logo" />

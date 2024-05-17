@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import './App.css';
@@ -11,7 +11,16 @@ import AddEventForm from '../../components/AddEventForm/AddEventForm';
 import UserProfile from '../UserProfile/UserProfile';
 
 export default function App() {
-  const [user, setUser] = useState(getUser());
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const currentUser = await getUser();
+      setUser(currentUser);
+    };
+
+    fetchUser();
+  }, []);
 
   const handleAddPost = (newPost, userData) => {
     console.log('New post:', newPost);

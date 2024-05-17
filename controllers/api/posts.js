@@ -7,7 +7,8 @@ module.exports = {
   getPosts,
   getPostsForUser,
   getEventPosts,
-  getEventPostsForUser
+  getEventPostsForUser,
+  deletePost,
 };
 
 async function createPost(req, res) {
@@ -109,6 +110,22 @@ async function getEventPostsForUser(req, res) {
     res.json(eventPosts);
   } catch (error) {
     console.error("Error fetching event posts:", error);
+    res.status(500).json({ error: "Server error" });
+  }
+}
+
+
+async function deletePost(req, res) {
+  try {
+    const post = await Post.findById(req.params.id);
+    if (!post) return res.status(404).json({ error: "Post not found" });
+    if (post.user.toString() !== req.user._id) {
+      return res.status(403).json({ error: "Unauthorized to delete this post" });
+    }
+    await Post.findByIdAndDelete(req.params.id);
+    res.status(200).json({ message: "Post deleted" });
+  } catch (error) {
+    console.error("Error deleting post:", error);
     res.status(500).json({ error: "Server error" });
   }
 }

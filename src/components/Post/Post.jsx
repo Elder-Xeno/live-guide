@@ -1,7 +1,8 @@
 import { useState } from 'react';
+import { deletePost } from '../../utilities/posts-api';
 import './Post.css';
 
-export default function Post({ post }) {
+export default function Post({ post, onDelete, user }) {
   const [modalMedia, setModalMedia] = useState(null);
 
   const handleMediaClick = (mediaUrl, isVideo) => {
@@ -10,6 +11,15 @@ export default function Post({ post }) {
 
   const closeModal = () => {
     setModalMedia(null);
+  };
+
+  const handleDelete = async () => {
+    try {
+      await deletePost(post._id);
+      onDelete(post._id);
+    } catch (error) {
+      console.error("Error deleting post:", error);
+    }
   };
 
   return (
@@ -31,15 +41,18 @@ export default function Post({ post }) {
           </div>
         )}
         <p className='caption'>{post.content}</p>
+        {user && post.user._id === user._id && (
+          <button onClick={handleDelete} className="delete-button">Delete</button>
+        )}
       </div>
       <p className='posted-by'>Posted by: {post.user.name}</p>
-      
+
       {modalMedia && (
         <div className="modal" onClick={closeModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+          <div className="modal-content" onClick={e => e.stopPropagation()}>
             <span className="close-button" onClick={closeModal}>&times;</span>
             {modalMedia.isVideo ? (
-              <video controls src={modalMedia.url} className="modal-media" autoPlay />
+              <video src={modalMedia.url} controls className="modal-media" />
             ) : (
               <img src={modalMedia.url} alt="Media" className="modal-media" />
             )}

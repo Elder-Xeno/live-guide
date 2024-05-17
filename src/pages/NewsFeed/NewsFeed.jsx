@@ -4,7 +4,7 @@ import Post from '../../components/Post/Post';
 import EventPost from '../../components/EventPost/EventPost';
 import "./NewsFeed.css"
 
-export default function NewsFeed() {
+export default function NewsFeed({ user }) {
   const [posts, setPosts] = useState([]);
   const [eventPosts, setEventPosts] = useState([]);
 
@@ -32,7 +32,7 @@ export default function NewsFeed() {
       <br/>
       <img src="https://i.imgur.com/DNJ1XS7.png" alt="posts-logo" className="posts-logo" />
       {posts.map(post => (
-        <Post key={post._id} post={post} />
+        <Post key={post._id} post={post} user={user} />
       ))}
 
       <img src="https://i.imgur.com/eAbazi0.png" alt="gigs-logo" className="gigs-logo" />
