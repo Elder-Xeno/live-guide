@@ -12,7 +12,7 @@ import UserProfile from '../UserProfile/UserProfile';
 
 export default function App() {
   const [user, setUser] = useState(null);
-
+  
   useEffect(() => {
     const fetchUser = async () => {
       const currentUser = await getUser();

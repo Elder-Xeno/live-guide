@@ -32,7 +32,7 @@ export default function UserProfile() {
     <div id="posts-section">
     <div className="user-profile">
       <h1>{user.name}'s Profile</h1>
-      <a href="#gigs-section"><img src="https://i.imgur.com/oenRZsO.png" className="jump-gigs-button"/></a>
+      <a href="#gigs-section"><img src="https://i.imgur.com/oenRZsO.png" alt="jump-gigs-button" className="jump-gigs-button"/></a>
       <br></br>
       <img src="https://i.imgur.com/DNJ1XS7.png" alt="posts-logo" className="posts-logo" />
       {posts.map(post => (
