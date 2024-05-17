@@ -3,7 +3,7 @@ const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cors = require('cors');
-const helmet = require('helmet');
+// const helmet = require('helmet');
 
 // Always require and configure near the top
 require('dotenv').config();
