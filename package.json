@@ -46,6 +46,10 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://live-guide-social-platform.onrender.com/",
-  "proxy": "https://live-guide.onrender.com/"
+  "homepage": "https://live-guide-social-platform.onrender.com",
+  "proxy": "https://live-guide.onrender.com",
+  "devDependencies": {
+    "customize-cra": "^1.0.0",
+    "react-app-rewired": "^2.2.1"
+  }
 }
