@@ -27,18 +27,25 @@ export default function NewsFeed({ user }) {
   }, []);
 
   return (
+      <div id="posts-section">
     <div className="news-feed">
       <img src="https://i.imgur.com/wW4UdAj.png" alt="newsfeed-logo" className="newsfeed-logo" />
+      <br/>
+      <a href="#gigs-section"><img src="https://i.imgur.com/oenRZsO.png" className="jump-gigs-button"/></a>
       <br/>
       <img src="https://i.imgur.com/DNJ1XS7.png" alt="posts-logo" className="posts-logo" />
       {posts.map(post => (
         <Post key={post._id} post={post} user={user} />
       ))}
-
+      </div>
+      <div id="gigs-section">
+      <a href="#posts-section"><img src="https://i.imgur.com/MdBfwBF.png" className="jump-posts-button"/></a>
+      <br/>
       <img src="https://i.imgur.com/eAbazi0.png" alt="gigs-logo" className="gigs-logo" />
       {eventPosts.map(eventPost => (
         <EventPost key={eventPost._id} eventPost={eventPost} />
       ))}
+    </div>
     </div>
   );
 }
