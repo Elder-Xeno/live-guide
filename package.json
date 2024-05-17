@@ -23,7 +23,7 @@
     "serve-favicon": "^2.5.0"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "npm start",
     "dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
