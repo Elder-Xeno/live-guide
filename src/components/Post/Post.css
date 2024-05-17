@@ -14,7 +14,8 @@
   position: relative;
   overflow: hidden;
   border-radius: 5px;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 1); /* Adjust values for blur, spread, and color as needed */
+  box-shadow: 0 0 50px rgba(0, 0, 0, 1);
+  overflow-y: auto;
 }
 
 .post img {
