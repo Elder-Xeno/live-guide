@@ -22,4 +22,18 @@
     max-width: 10%;
 }
 
+@media only screen and (max-width: 768px) {
+    .posts-logo {
+        max-width: 80%;
+    }
+    
+    .gigs-logo {
+        max-width: 80%;
+    }
+    .newsfeed-logo {
+        margin-top: 5px;
+        max-width: 100%;
+    }
+
+}
   

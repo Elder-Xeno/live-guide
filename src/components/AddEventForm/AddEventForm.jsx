@@ -56,20 +56,20 @@ export default function AddEventForm({ onAdd, user }) {
     return (
             <><img src="https://i.imgur.com/4IWQE6M.png" alt="add-gig-logo" className="add-gig-logo" />
             <div className="add-event-form">
-            <form onSubmit={handleSubmit}>
-                <input type="text" name="title" value={formData.title} onChange={handleChange} placeholder="Title" required style={{ width: '500px' }} />
+            <form className='form-input' onSubmit={handleSubmit}>
+                <input className='title' type="text" name="title" value={formData.title} onChange={handleChange} placeholder="Title" required style={{width:500}} />
                 <br></br>
-                <input type="text" name="description" value={formData.description} onChange={handleChange} placeholder="Description" required  />
+                <input className='description' type="text" name="description" value={formData.description} onChange={handleChange} placeholder="Description" required  />
                 <br></br>
-                <input type="date" name="date" value={formData.date} onChange={handleChange} placeholder="Date" required />
+                <input className='date' type="date" name="date" value={formData.date} onChange={handleChange} placeholder="Date" required />
                 <br></br>
-                <input type="number" name="price" value={formData.price} onChange={handleChange} placeholder="Price" />
+                <input className='price' type="number" name="price" value={formData.price} onChange={handleChange} placeholder="Price" />
                 <br></br>
-                <input type="text" name="supportingActs" value={formData.supportingActs} onChange={handleChange} placeholder="Supporting Acts" />
+                <input className='supports' type="text" name="supportingActs" value={formData.supportingActs} onChange={handleChange} placeholder="Supporting Acts" />
                 <br></br>
-                <input type="text" name="spotifyLink" value={formData.spotifyLink} onChange={handleChange} placeholder="Spotify Link" />
+                <input className='spotify' type="text" name="spotifyLink" value={formData.spotifyLink} onChange={handleChange} placeholder="Spotify Link" />
                 <br></br>
-                <input type="text" name="ticketLink" value={formData.ticketLink} onChange={handleChange} placeholder="Ticket Link" />
+                <input className='tickets' type="text" name="ticketLink" value={formData.ticketLink} onChange={handleChange} placeholder="Ticket Link" />
                 <br></br>
                 <button className='submit-button' type="submit">Add Event</button>
             </form>

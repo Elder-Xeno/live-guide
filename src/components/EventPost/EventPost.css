@@ -88,22 +88,26 @@
 
 @media only screen and (max-width: 768px) {
   .event-post {
-    max-width: 100%;
+    background-color: white;
+    background-position: center;
+    max-width: auto;
     height: auto;
-    background-size: cover;
+    background-size: 1200px;
+    margin-right: 20px;
   }
 
   .event-post-content {
-    width: 100%;
-    padding: 10px;
-    padding-left: 10px;
+    width: 100%; /* Adjusted width */
+    padding: 5px;
+    padding-left: 0px;
   }
 
   .event-post h2 {
-    font-size: 20px;
+    font-size: 30px;
   }
 
   .event-post p {
-    font-size: 14px;
+    font-size: 18px; /* Removed duplicate font-size */
+    padding-bottom: 2px;
   }
 }

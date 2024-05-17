@@ -5,5 +5,14 @@
 
 .auth-page-header {
     color: white;
-    
+
+}
+
+@media only screen and (max-width: 768px) {
+    .login-logo{
+        max-width:100%;
+    }
+    .sign-up-button {
+        max-width: 100%;
+    }
 }

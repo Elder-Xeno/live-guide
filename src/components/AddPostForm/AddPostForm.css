@@ -47,3 +47,64 @@ h1 {
   margin-top: 5px;
   max-width: 30%;
 }
+
+@media only screen and (max-width: 768px) {
+  .add-post-form {
+    margin-top: 20px;
+    background-image: url("https://images.squarespace-cdn.com/content/v1/5ea237e587e03021f9ef8cc2/81128b2a-f04c-439b-9d7a-c45d1b205cbf/SWOOP-Festivals-BG.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 80%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+    
+  .add-post-form label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 15px;
+      
+    }
+    
+  .add-post-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    
+  .add-post-form button {
+      background-color: #c98d4d;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 20px;
+    }
+    
+  .add-post-form button:hover {
+      background-color: #b35100;
+    }
+  
+  h1 {
+      padding-top: 60px;
+      color: white;
+  }
+  
+  .add-post-logo {
+    margin-top: 5px;
+    max-width: 100%;
+  }
+
+  .choose-file-button {
+    font-size: 10px;
+    background-color: rgba(0, 0, 255, 0.311);
+  }
+
+}

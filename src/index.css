@@ -14,16 +14,10 @@ body {
   background-attachment: fixed;
 }
 
-@media only screen and (max-width: 768px) {
-  body {
-    background-image: url("https://i.imgur.com/rTQx6yq.png");
-    /* Add additional styles for mobile backgrounds if needed */
-  }
-}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  monospace;
 }
 
 #root {
@@ -145,4 +139,20 @@ button:disabled, form:invalid button[type="submit"] {
 button[type="submit"] {
   grid-column: span 2;
   margin: 1vmin 0 0;
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    background-image: url("https://i.imgur.com/ZJ8u5O6.png");
+    /* Add additional styles for mobile backgrounds if needed */
+  }
+  input {
+    padding: 1vmin;
+    font-size: 20px;
+    border: .1vmin solid var(--tan-3);
+    border-radius: .5vmin;
+    color: var(--text-dark);
+    background-image: none !important; /* prevent lastpass */
+    outline: none;
+  }
 }

@@ -36,3 +36,46 @@
     width: 50%;
     color: white;
  }
+
+ @media only screen and (max-width: 768px) {
+    .add-event-form {
+        margin-top: 20px;
+        background-color: darkgray;
+        background-image: url("https://petapixel.com/assets/uploads/2023/07/how-to-shoot-music-concert-featured-image.jpg");
+        background-size: 400%;
+        background-position: cover;
+        background-repeat: cover;
+        background-position: fill;
+        border-radius: 8px;
+        color: black;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        margin-bottom: 20px;
+        width: 90%;
+        position: absolute;
+        transform: translateX(-50%);
+    }
+    
+    .submit-button {
+        background-color: green;
+        color: white;
+        padding:20px;
+        max-width: 91%;
+        font-size: large;
+      }
+    
+      .add-gig-logo {
+        margin-top: 5px;
+        max-width: 100%;
+      }
+    
+     .google-button {
+        background-color: green;
+        width: 50%;
+        color: white;
+     }
+     .title{
+        width:300px;
+     }
+
+ }

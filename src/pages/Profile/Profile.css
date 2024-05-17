@@ -14,3 +14,18 @@
 .jump-posts-button {
     max-width: 10%;
 }
+
+@media only screen and (max-width: 768px) {
+    .profile-logo {
+        margin-top: 5px;
+        max-width: 100%;
+    }
+    .jump-gigs-button {
+        max-width: 50%;
+    }
+    
+    .jump-posts-button {
+        max-width: 50%;
+    }
+
+}

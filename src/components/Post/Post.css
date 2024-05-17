@@ -194,3 +194,28 @@
 .cancel-button:hover {
   background-color: darkgrey;
 }
+
+@media only screen and (max-width: 768px) {
+  .post-container{
+    max-width: 100%;
+  }
+  .post {
+    max-width: 95%;
+  }
+  .media {
+    width: 100%;
+    height: 100%px;
+    object-fit: cover;
+    cursor: pointer;
+  }
+  .post img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+  }
+  .video-thumbnail video {
+    display: block;
+    width: 100%;
+    height: 340px;
+  }
+}
