@@ -17,6 +17,26 @@
   box-shadow: 0 0 50px rgba(0, 0, 0, 1);
   overflow-y: auto;
 }
+
+/* Custom Scrollbar for Webkit Browsers */
+.post::-webkit-scrollbar {
+  width: 8px;
+}
+
+.post::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.post::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+}
+
+.post::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.892);
+}
+
 .media {
   width: 450px;
   height: 400px;
