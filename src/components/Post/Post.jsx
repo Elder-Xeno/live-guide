@@ -1,6 +1,17 @@
+import { useState } from 'react';
 import './Post.css';
 
 export default function Post({ post }) {
+  const [modalMedia, setModalMedia] = useState(null);
+
+  const handleMediaClick = (mediaUrl, isVideo) => {
+    setModalMedia({ url: mediaUrl, isVideo });
+  };
+
+  const closeModal = () => {
+    setModalMedia(null);
+  };
+
   return (
     <div className='post-container'>
       <div className="post">
@@ -9,9 +20,12 @@ export default function Post({ post }) {
             {post.media.map((mediaUrl, index) => {
               const isVideo = mediaUrl.match(/\.(mp4|webm|ogg)$/i);
               return isVideo ? (
-                <video key={index} src={mediaUrl} controls className="media" />
+                <div key={index} className="video-thumbnail" onClick={() => handleMediaClick(mediaUrl, true)}>
+                  <video src={mediaUrl} className="media" />
+                  <div className="play-button">&#9658;</div>
+                </div>
               ) : (
-                <img key={index} src={mediaUrl} alt={`Media ${index}`} className="media" />
+                <img key={index} src={mediaUrl} alt={`Media ${index}`} className="media" onClick={() => handleMediaClick(mediaUrl, false)} />
               );
             })}
           </div>
@@ -19,6 +33,19 @@ export default function Post({ post }) {
         <p className='caption'>{post.content}</p>
       </div>
       <p className='posted-by'>Posted by: {post.user.name}</p>
+      
+      {modalMedia && (
+        <div className="modal" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <span className="close-button" onClick={closeModal}>&times;</span>
+            {modalMedia.isVideo ? (
+              <video controls src={modalMedia.url} className="modal-media" autoPlay />
+            ) : (
+              <img src={modalMedia.url} alt="Media" className="modal-media" />
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

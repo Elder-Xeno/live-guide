@@ -17,6 +17,32 @@
   box-shadow: 0 0 50px rgba(0, 0, 0, 1);
   overflow-y: auto;
 }
+.media {
+  width: 450px;
+  height: 400px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.video-thumbnail {
+  position: relative;
+}
+
+.video-thumbnail video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  color: rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+}
 
 .post img {
   width: 450px;
@@ -38,8 +64,42 @@
   position: absolute;
   text-align: center;
   font-size: 20px;
-  color: rgb(255, 255, 255);
+  color: hsl(0, 0%, 100%);
   padding: 0px;
   box-sizing: border-box;
   margin-top: 510px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.modal-media {
+  max-width: 100%;
+  max-height: 80vh;
 }
