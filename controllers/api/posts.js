@@ -9,6 +9,7 @@ module.exports = {
   getEventPosts,
   getEventPostsForUser,
   deletePost,
+  updatePost,
 };
 
 async function createPost(req, res) {
@@ -126,6 +127,35 @@ async function deletePost(req, res) {
     res.status(200).json({ message: "Post deleted" });
   } catch (error) {
     console.error("Error deleting post:", error);
+    res.status(500).json({ error: "Server error" });
+  }
+}
+
+async function updatePost(req, res) {
+  try {
+    const post = await Post.findById(req.params.id);
+    if (!post) return res.status(404).json({ error: "Post not found" });
+    if (post.user.toString() !== req.user._id) {
+      return res.status(403).json({ error: "Unauthorized to update this post" });
+    }
+
+    // Update content and existing media
+    post.content = req.body.content;
+    if (req.body.existingMedia) {
+      post.media = JSON.parse(req.body.existingMedia);
+    }
+
+    // Add new media
+    if (req.files) {
+      const mediaUrls = req.files.map((file) => file.location);
+      post.media = post.media.concat(mediaUrls);
+    }
+
+    await post.save();
+    await post.populate({ path: "user", select: "_id name" });
+    res.status(200).json(post);
+  } catch (error) {
+    console.error("Error updating post:", error);
     res.status(500).json({ error: "Server error" });
   }
 }

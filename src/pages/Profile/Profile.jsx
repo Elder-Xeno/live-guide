@@ -26,8 +26,12 @@ export default function Profile({ user }) {
     fetchData();
   }, [user]);
 
-  const handleDelete = (postId) => {
+  const handleDeletePost = (postId) => {
     setPosts(posts.filter(post => post._id !== postId));
+  };
+
+  const handleUpdatePost = (updatedPost) => {
+    setPosts(posts.map(post => (post._id === updatedPost._id ? updatedPost : post)));
   };
 
   return (
@@ -36,7 +40,7 @@ export default function Profile({ user }) {
       <br></br>
       <img src="https://i.imgur.com/DNJ1XS7.png" alt="posts-logo" className="posts-logo" />
       {posts.map(post => (
-        <Post key={post._id} post={post} onDelete={handleDelete} user={user} />
+        <Post key={post._id} post={post} user={user} onDelete={handleDeletePost} onUpdate={handleUpdatePost} />
       ))}
 
       <img src="https://i.imgur.com/eAbazi0.png" alt="gigs-logo" className="gigs-logo" />

@@ -38,3 +38,7 @@ export async function createEvent(eventData) {
 export async function deletePost(postId) {
   return sendRequest(`${BASE_URL}/${postId}`, "DELETE");
 }
+
+export async function updatePost(postId, postData) {
+  return sendRequest(`${BASE_URL}/${postId}`, "PUT", postData);
+}

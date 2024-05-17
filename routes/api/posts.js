@@ -29,4 +29,6 @@ router.post("/events", ensureLoggedIn, postsCtrl.createEvent);
 
 router.delete("/:id", ensureLoggedIn, postsCtrl.deletePost);
 
+router.put("/:id", ensureLoggedIn, upload.array("media", 10), postsCtrl.updatePost);
+
 module.exports = router;
