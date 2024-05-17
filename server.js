@@ -22,8 +22,6 @@ app.use(cors({
   credentials: true,
 }));
 
-// Use Helmet for security
-app.use(helmet());
 
 // Configure both serve-favicon & static middleware
 // to serve from the production 'build' folder
