@@ -46,6 +46,5 @@
     ]
   },
   "homepage": "https://live-guide-social-platform.onrender.com/",
-  // "proxy": "http://localhost:3001"
   "proxy": "https://live-guide.onrender.com/"
 }
