@@ -66,7 +66,7 @@ export default function AddPostForm({ onAdd }) {
         <label>Message:</label>
         <textarea value={content} name="content" onChange={handleChangeContent} required />
         <label>Photos/Videos:</label>
-        <input type="file" multiple name="media" onChange={handleFileChange} />
+        <input type="file" multiple name="media" onChange={handleFileChange} accept="image/*,video/*" />
         <button type="submit">Add Post</button>
       </form>
     </>
