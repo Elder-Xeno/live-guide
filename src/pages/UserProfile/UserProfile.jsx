@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import * as usersAPI from '../../utilities/users-api';
 import Post from '../../components/Post/Post';
 import EventPost from '../../components/EventPost/EventPost';
+import "./UserProfile.css"
 
 export default function UserProfile() {
   const { userId } = useParams();
@@ -28,19 +29,24 @@ export default function UserProfile() {
   if (!user) return <div>Loading...</div>;
 
   return (
+    <div id="posts-section">
     <div className="user-profile">
       <h1>{user.name}'s Profile</h1>
-      <p>Email: {user.email}</p>
-
-      <h2>Regular Posts</h2>
+      <a href="#gigs-section"><img src="https://i.imgur.com/oenRZsO.png" className="jump-gigs-button"/></a>
+      <br></br>
+      <img src="https://i.imgur.com/DNJ1XS7.png" alt="posts-logo" className="posts-logo" />
       {posts.map(post => (
         <Post key={post._id} post={post} />
       ))}
-
-      <h2>Event/Gig Posts</h2>
+      </div>
+      <div id="gigs-section">
+      <a href="#posts-section"><img src="https://i.imgur.com/MdBfwBF.png" className="jump-posts-button"/></a>
+      <br/>
+      <img src="https://i.imgur.com/eAbazi0.png" alt="gigs-logo" className="gigs-logo" />
       {eventPosts.map(eventPost => (
         <EventPost key={eventPost._id} eventPost={eventPost} />
       ))}
+    </div>
     </div>
   );
 }
