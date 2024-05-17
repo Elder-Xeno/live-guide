@@ -2,8 +2,7 @@ const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
-const cors = require('cors');
-// const helmet = require('helmet');
+// const cors = require('cors');
 
 // Always require and configure near the top
 require('dotenv').config();
@@ -17,10 +16,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Configure CORS to allow requests from your frontend domain
-app.use(cors({
-  origin: 'https://live-guide-social-platform.onrender.com/',
-  credentials: true,
-}));
+// app.use(cors({
+//   origin: 'https://live-guide-social-platform.onrender.com/',
+//   credentials: true,
+// }));
 
 
 // Configure both serve-favicon & static middleware
