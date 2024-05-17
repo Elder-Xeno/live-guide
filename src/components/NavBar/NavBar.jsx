@@ -66,15 +66,15 @@ export default function NavBar({ user, setUser }) {
         <button className="nav-toggle" onClick={toggleNav}>☰</button>
         <div className={`links ${isNavOpen ? 'open' : ''}`}>
           <span>Welcome, {user.name}</span>
-          &nbsp; | &nbsp;
+          &nbsp;  &nbsp;
           <Link to="/profile">Profile</Link>
-          &nbsp; | &nbsp;
+          &nbsp;  &nbsp;
           <Link to="/">News Feed</Link>
-          &nbsp; | &nbsp;
+          &nbsp;  &nbsp;
           <Link to="/add-post">Add Post</Link>
-          &nbsp; | &nbsp;
+          &nbsp;  &nbsp;
           <Link to="/add-event">Add Gig</Link>
-          &nbsp; | &nbsp;
+          &nbsp;  &nbsp;
           <Link to="" onClick={handleLogOut}>Log Out</Link>
         </div>
       </nav>
