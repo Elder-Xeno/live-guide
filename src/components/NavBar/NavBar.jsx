@@ -51,7 +51,7 @@ export default function NavBar({ user, setUser }) {
         <div className="search-container">
           <form onSubmit={handleSearchSubmit} className="search-form">
             <input className="searchBar" type="text" value={searchQuery} onChange={handleSearchChange} placeholder="Search..." />
-            <button type="submit" className="searchButton">Search</button>
+            {/* <button type="submit" className="searchButton">Search</button> */}
           </form>
           {searchResults.length > 0 && (
             <div className="search-dropdown">
