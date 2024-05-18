@@ -39,7 +39,7 @@ export default function Profile({ user }) {
     <div className="profile">
       <img src="https://i.imgur.com/bbQ3tnW.png" alt="profile-logo" className="profile-logo" />
       <br/>
-      <a href="#gigs-section"><img src="https://i.imgur.com/oenRZsO.png" className="jump-gigs-button"/></a>
+      <a href="#gigs-section"><img src="https://i.imgur.com/oenRZsO.png" alt="jump-gigs-button" className="jump-gigs-button"/></a>
       <br></br>
       <img src="https://i.imgur.com/DNJ1XS7.png" alt="posts-logo" className="posts-logo" />
       {posts.map(post => (
@@ -47,7 +47,7 @@ export default function Profile({ user }) {
       ))}
       </div>
       <div id="gigs-section">
-      <a href="#posts-section"><img src="https://i.imgur.com/MdBfwBF.png" className="jump-posts-button"/></a>
+      <a href="#posts-section"><img src="https://i.imgur.com/MdBfwBF.png" alt="jump-posts-button" className="jump-posts-button"/></a>
       <br/>
       <img src="https://i.imgur.com/eAbazi0.png" alt="gigs-logo" className="gigs-logo" />
       {eventPosts.map(eventPost => (

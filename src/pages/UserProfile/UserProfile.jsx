@@ -40,7 +40,7 @@ export default function UserProfile() {
       ))}
       </div>
       <div id="gigs-section">
-      <a href="#posts-section"><img src="https://i.imgur.com/MdBfwBF.png" className="jump-posts-button"/></a>
+      <a href="#posts-section"><img src="https://i.imgur.com/MdBfwBF.png" alt="jump-posts-button" className="jump-posts-button"/></a>
       <br/>
       <img src="https://i.imgur.com/eAbazi0.png" alt="gigs-logo" className="gigs-logo" />
       {eventPosts.map(eventPost => (
