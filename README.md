@@ -2,7 +2,7 @@
 
 A social media platform for all the live music lovers out there to share their experiences and to create new ones.
 
-## Check out LiveGuide on Render here:
+## Check out Live Guide on Render here:
 https://live-guide.onrender.com
 
 ## Description
