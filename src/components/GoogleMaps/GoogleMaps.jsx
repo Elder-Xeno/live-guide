@@ -83,7 +83,7 @@ export default function GoogleMaps({handleVenue}) { useEffect(() => {
     return () => {
       document.body.removeChild(script);
     }
-  }, [])
+  },)
   return <><div class="pac-card" id="pac-card">
     </div>
       <div id="pac-container"> Venue Search:
