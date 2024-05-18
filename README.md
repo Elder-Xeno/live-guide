@@ -1,7 +1,9 @@
-
 # Live Guide
 
 A social media platform for all the live music lovers out there to share their experiences and to create new ones.
+
+## Check out LiveGuide on Render here:
+https://live-guide.onrender.com
 
 ## Description
 
@@ -47,4 +49,3 @@ https://trello.com/b/yE6RCIDt/social-media-live-music-mern-stack
 - Gabby Maher
 - Mathew Hooler
 
-## Check out LiveGuide on Render here:
