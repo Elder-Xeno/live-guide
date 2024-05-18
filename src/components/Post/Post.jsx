@@ -96,6 +96,12 @@ export default function Post({ post, onDelete, onUpdate, user }) {
                 <img key={index} src={mediaUrl} alt={`Media ${index}`} className="media" onClick={() => handleMediaClick(mediaUrl, false)} />
               );
             })}
+            <div className="like-section">
+              <span className="like-button" onClick={handleLike}>
+              {likes.includes(user._id) ? '🤘' : '✊'}
+              </span>
+              <span className="like-count">{likes.length}</span>
+            </div>
           </div>
         )}
         <p className='caption'>{post.content}</p>
@@ -107,12 +113,6 @@ export default function Post({ post, onDelete, onUpdate, user }) {
         )}
       </div>
       <p className='posted-by'>Posted by: {post.user ? post.user.name : 'Unknown'}</p>
-      <div className="like-section">
-        <span className="like-button" onClick={handleLike}>
-        {likes.includes(user._id) ? '🤘' : '✊'}
-        </span>
-        <span className="like-count">{likes.length}</span>
-      </div>
       {modalMedia && (
         <div className="modal" onClick={closeModal}>
           <div className="modal-content" onClick={e => e.stopPropagation()}>

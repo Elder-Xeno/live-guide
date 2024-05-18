@@ -18,7 +18,8 @@
 }
 
 .like-count {
-  font-size: 18px;
+  font-size: 22px;
+  font-weight: 800;
 }
 
 /* Custom Scrollbar for Webkit Browsers */
@@ -79,8 +80,11 @@
   font-size: 18px;
   color: black;
   padding: 0px;
+  margin-inline: auto;
   margin-top: 10px;
   box-sizing: border-box;
+  /* bordeR: 1px solid; */
+  max-width: 84%;
 }
 
 .posted-by {
@@ -203,18 +207,17 @@
   display: flex;
   align-items: center;
   margin-top: 10px;
+  position: absolute;
+  bottom: 27px;
+  right: 5px;
 }
 
 .like-button {
   cursor: pointer;
   font-size: 24px;
-  margin-right: 5px;
-  font-size: 30px; /* Small size */
+  margin-right: 2px;
+  font-size: 36px; /* Small size */
   transition: font-size 0.3s;
-}
-
-.like-button.liked {
-  font-size: 40px; /* Large size when liked */
 }
 
 @media only screen and (max-width: 768px) {
