@@ -17,6 +17,10 @@
   overflow-y: auto;
 }
 
+.like-count {
+  font-size: 18px;
+}
+
 /* Custom Scrollbar for Webkit Browsers */
 .post::-webkit-scrollbar {
   width: 8px;
@@ -193,6 +197,24 @@
 
 .cancel-button:hover {
   background-color: darkgrey;
+}
+
+.like-section {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.like-button {
+  cursor: pointer;
+  font-size: 24px;
+  margin-right: 5px;
+  font-size: 30px; /* Small size */
+  transition: font-size 0.3s;
+}
+
+.like-button.liked {
+  font-size: 40px; /* Large size when liked */
 }
 
 @media only screen and (max-width: 768px) {

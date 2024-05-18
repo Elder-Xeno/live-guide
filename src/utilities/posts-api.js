@@ -42,3 +42,11 @@ export async function deletePost(postId) {
 export async function updatePost(postId, postData) {
   return sendRequest(`${BASE_URL}/${postId}`, "PUT", postData);
 }
+
+export async function likePost(postId) {
+  return sendRequest(`${BASE_URL}/${postId}/like`, "POST");
+}
+
+export async function unlikePost(postId) {
+  return sendRequest(`${BASE_URL}/${postId}/unlike`, "POST");
+}

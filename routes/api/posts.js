@@ -31,4 +31,7 @@ router.delete("/:id", ensureLoggedIn, postsCtrl.deletePost);
 
 router.put("/:id", ensureLoggedIn, upload.array("media", 10), postsCtrl.updatePost);
 
+router.post("/:id/like", ensureLoggedIn, postsCtrl.likePost);
+router.post("/:id/unlike", ensureLoggedIn, postsCtrl.unlikePost);
+
 module.exports = router;
