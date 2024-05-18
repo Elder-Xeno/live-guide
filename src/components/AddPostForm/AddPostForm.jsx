@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 import { createPost } from "../../utilities/posts-api";
 import { getUser } from "../../utilities/users-service";
 import "./AddPostForm.css";
+import { useNavigate } from "react-router-dom";
 
 export default function AddPostForm({ onAdd }) {
   const [content, setContent] = useState("");
   const [media, setMedia] = useState([]);
   const [user, setUser] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -50,6 +52,7 @@ export default function AddPostForm({ onAdd }) {
       await onAdd(newPost, user);
       setContent("");
       setMedia([]);
+      navigate('/');
     } catch (error) {
       console.error("Error adding post:", error);
     }

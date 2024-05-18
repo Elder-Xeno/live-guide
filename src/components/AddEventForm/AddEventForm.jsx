@@ -2,8 +2,10 @@ import { useState } from 'react';
 import { createEvent } from '../../utilities/posts-api';
 import GoogleMaps from '../GoogleMaps/GoogleMaps';
 import "./AddEventForm.css"
+import { useNavigate } from 'react-router-dom';
 
 export default function AddEventForm({ onAdd, user }) {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         title: '',
         description: '',
@@ -38,6 +40,7 @@ export default function AddEventForm({ onAdd, user }) {
                 userName: user.name,
             });
             await onAdd(newEvent);
+            navigate('/');
             setFormData({
                 title: '',
                 description: '',
