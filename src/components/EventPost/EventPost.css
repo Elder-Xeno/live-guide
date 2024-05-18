@@ -62,7 +62,7 @@
 }
 
 .event-post a:visited {
-  color: white;
+  color: blue;
 }
 
 .spotify-link,
@@ -77,10 +77,14 @@
 
 .spotify-link {
   background-color: green;
+  max-width: 100%;
+  font-size: 20px;
 }
 
 .ticket-link {
   background-color: orange;
+  max-width: 100%;
+  font-size: 20px;
 }
 .add-button {
   background-color: blue;
