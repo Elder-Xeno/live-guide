@@ -41,6 +41,7 @@ We have plans to implement the following in the future:
 - A 'Follow' feature where users can keep up-to-date with specific users they choose.
 - A chat function for users to connect with one another.
 - A way for the users to save events to their profiles to keep track of upcoming events they're interested, with reminders being sent to the user as the gig/event date approaches
+- Comment on user's posts with Edit & Delete functionality
 
 ## Trello Board
 https://trello.com/b/yE6RCIDt/social-media-live-music-mern-stack
