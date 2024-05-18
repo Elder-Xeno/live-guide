@@ -37,9 +37,9 @@ export default function App() {
           <>
             <NavBar user={user} setUser={setUser} />
             <Routes>
-              <Route path="/" element={<NewsFeed />} />
+              <Route path="/" element={<NewsFeed user={user} />} />
               <Route path="/profile" element={<Profile user={user} />} />
-              <Route path="/profile/:userId" element={<UserProfile />} />
+              <Route path="/profile/:userId" element={<UserProfile currentUser={user} />} />
               <Route path="/add-post" element={<AddPostForm onAdd={handleAddPost} user={user} />} />
               <Route path="/add-event" element={<AddEventForm onAdd={handleAddEvent} user={user} />} />
             </Routes>

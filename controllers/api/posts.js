@@ -10,6 +10,8 @@ module.exports = {
   getEventPostsForUser,
   deletePost,
   updatePost,
+  likePost,
+  unlikePost,
 };
 
 async function createPost(req, res) {
@@ -157,5 +159,36 @@ async function updatePost(req, res) {
   } catch (error) {
     console.error("Error updating post:", error);
     res.status(500).json({ error: "Server error" });
+  }
+}
+
+async function likePost(req, res) {
+  try {
+    const post = await Post.findById(req.params.id);
+    if (!post.likes.includes(req.user._id)) {
+      post.likes.push(req.user._id);
+      await post.save();
+      res.status(200).json(post);
+    } else {
+      res.status(400).json({ message: 'You have already liked this post' });
+    }
+  } catch (err) {
+    res.status(400).json(err);
+  }
+}
+
+async function unlikePost(req, res) {
+  try {
+    const post = await Post.findById(req.params.id);
+    const index = post.likes.indexOf(req.user._id);
+    if (index > -1) {
+      post.likes.splice(index, 1);
+      await post.save();
+      res.status(200).json(post);
+    } else {
+      res.status(400).json({ message: 'You have not liked this post' });
+    }
+  } catch (err) {
+    res.status(400).json(err);
   }
 }

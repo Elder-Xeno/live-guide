@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { deletePost, updatePost  } from '../../utilities/posts-api';
+import { deletePost, updatePost, likePost, unlikePost } from '../../utilities/posts-api';
 import './Post.css';
 
 export default function Post({ post, onDelete, onUpdate, user }) {
@@ -8,11 +8,23 @@ export default function Post({ post, onDelete, onUpdate, user }) {
   const [editedContent, setEditedContent] = useState(post.content);
   const [existingMedia, setExistingMedia] = useState(post.media);
   const [newMedia, setNewMedia] = useState([]);
+  const [likes, setLikes] = useState(post.likes || []);
 
+
+  if (!post) {
+    console.error("Post object is undefined.");
+    return <div>Error: Post not found.</div>;
+  }
+
+  if (!user) {
+    console.error("User object is undefined.");
+    return <div>Error: User not found.</div>;
+  }
+  
   const handleMediaClick = (mediaUrl, isVideo) => {
     setModalMedia({ url: mediaUrl, isVideo });
   };
-//   overlay to view media in a larger format
+
   const closeModal = () => {
     setModalMedia(null);
   };
@@ -56,6 +68,18 @@ export default function Post({ post, onDelete, onUpdate, user }) {
     setExistingMedia(existingMedia.filter((_, i) => i !== index));
   };
 
+  const handleLike = async () => {
+    try {
+      const updatedPost = likes.includes(user._id)
+        ? await unlikePost(post._id)
+        : await likePost(post._id);
+
+      setLikes(updatedPost.likes);
+    } catch (error) {
+      console.error('Error liking/unliking post:', error);
+    }
+  };
+
   return (
     <div className='post-container'>
       <div className="post">
@@ -75,19 +99,22 @@ export default function Post({ post, onDelete, onUpdate, user }) {
           </div>
         )}
         <p className='caption'>{post.content}</p>
-        {user && post.user._id === user._id && (
+        {user && post.user && post.user._id === user._id && (
           <>
             <button onClick={handleEdit} className="edit-button">Edit</button>
             <button onClick={handleDelete} className="delete-button">Delete</button>
           </>
         )}
       </div>
-      <p className='posted-by'>Posted by: {post.user.name}</p>
-
+      <p className='posted-by'>Posted by: {post.user ? post.user.name : 'Unknown'}</p>
+      <div className="like-section">
+        <span className="like-button" onClick={handleLike}>
+        {likes.includes(user._id) ? '🤘' : '✊'}
+        </span>
+        <span className="like-count">{likes.length}</span>
+      </div>
       {modalMedia && (
         <div className="modal" onClick={closeModal}>
-{/* prevent an event from bubbling up the DOM tree. */}
-{/* clicking inside the modal content does not close the modal, while clicking outside the modal content does close it. */}
           <div className="modal-content" onClick={e => e.stopPropagation()}>
             <span className="close-button" onClick={closeModal}>&times;</span>
             {modalMedia.isVideo ? (
@@ -98,7 +125,6 @@ export default function Post({ post, onDelete, onUpdate, user }) {
           </div>
         </div>
       )}
-
       {isEditing && (
         <div className="edit-modal">
           <textarea value={editedContent} onChange={(e) => setEditedContent(e.target.value)} />
